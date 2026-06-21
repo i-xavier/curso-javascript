@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora</title>
+
+  <style>
+
+    p{
+      color: white;
+      font-size: 30px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background-color: black;
+    }
+
+    button{
+      width: 60px;
+      height: 60px;
+      font-size: 26px;
+      border: 0;
+      border-radius: 60px;
+      background-color: #333333;
+      color: white;
+      cursor: pointer;
+      margin-right: 5px;
+
+    }
+
+    .btn_operadores{
+      background-color: orange;
+    }
+
+    .btn_clear{
+      font-size: 18px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <p id="display">
+    Calculadora
+  </p>
+  <p>
+    <button onclick="calculo += '1', mostrarCalculo()">
+    1
+  </button>
+
+  <button onclick="calculo += '2', mostrarCalculo()">
+    2
+  </button>
+  
+  <button onclick="calculo += '3', mostrarCalculo()">
+    3
+  </button>
+    
+  <button class="btn_operadores" onclick="calculo += ' + ', mostrarCalculo()">
+    +
+  </button>
+  </p>
+  
+  <p>
+    <button onclick="calculo += '4', mostrarCalculo()">
+    4
+  </button>
+
+  <button onclick="calculo += '5', mostrarCalculo()">
+    5
+  </button>
+  
+  <button onclick="calculo += '6', mostrarCalculo()">
+    6
+  </button>
+    
+  <button class="btn_operadores" onclick="calculo += ' - ', mostrarCalculo()">
+    -
+  </button>
+  </p>
+  
+  <p>
+    <button onclick="calculo += '7', mostrarCalculo()">
+    7
+  </button>
+
+  <button onclick="calculo += '8', mostrarCalculo()">
+    8
+  </button>
+  
+  <button onclick="calculo += '9', mostrarCalculo()">
+    9
+  </button>
+    
+  <button class="btn_operadores" onclick="calculo += ' * ', mostrarCalculo()">
+    *
+  </button>
+  </p>
+  
+  <p>
+    <button onclick="calculo += '0', mostrarCalculo()">
+    0
+  </button>
+
+  <button>
+    .
+  </button>
+  
+  <button onclick="calcular(calculo)">
+    =
+  </button>
+    
+  <button class="btn_operadores" onclick="calculo += ' / ', mostrarCalculo()">
+    /
+  </button>
+  </p>
+  
+  
+  <button class="btn_clear" onclick="calculo = '', mostrarCalculo()">
+    clear
+  </button>
+  
+  
+  <script>
+    let calculo = '';
+
+    const display = document.getElementById("display");
+
+    function mostrarCalculo(){
+      display.textContent = calculo;
+    }
+
+    function calcular(calcular){
+      
+      calculo = eval(calcular).toString();
+      
+      display.textContent = calculo;
+    }
+
+  </script>
+</body>
+</html>

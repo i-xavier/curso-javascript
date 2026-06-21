@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p>
+    Cart Quantity
+  </p>
+  <button class="showQuantity_btn" onclick="showCart()">
+    Show Quantity
+  </button>
+  <button class="add2cart_btn" onclick="addToCart()">
+    Add to Cart
+  </button>
+  <button class="add2cart_btn" onclick="removeFromCart()">
+    Remove from Cart
+  </button>
+  <button class="add2_btn" onclick="remove2()">
+    -2
+  </button>
+  <button class="add3_btn" onclick="remove3()">
+    -3
+  </button>
+  <button class="add2_btn" onclick="add2()">
+    +2
+  </button>
+  <button class="add3_btn" onclick="add3()">
+    +3
+  </button>
+  <button class="add2_btn" onclick="add4()">
+    +4
+  </button>
+  <button class="add3_btn" onclick="add5()">
+    +5
+  </button>
+  <button class="reset_btn" onclick="resetCart()">
+    Reset Cart
+  </button>
+  
+  <script>
+
+    let cart = 0;
+
+    function addToCart (){
+      cart++;
+      showCart();
+    }
+
+    function removeFromCart (){
+      cart--;
+      showCart();
+    }
+
+    function add3 (){
+      cart += 3;
+      showCart();
+    }
+    
+    function add2 (){
+      cart += 2;
+      showCart();
+    }
+
+    function remove3 (){
+      cart -= 3;
+      showCart();
+    }
+    
+    function remove2 (){
+      cart -= 2;
+      showCart();
+    }
+
+    function add4 (){
+      cart += 4;
+      showCart();
+    }
+    
+    function add5 (){
+      cart += 5;
+      showCart();
+    }
+
+    function resetCart(){
+      cart = 0;
+      showCart();
+    }
+
+    function showCart(){
+      console.log(`Cart quantity: ${cart}`)
+    }
+    let name = 'Igor';
+
+    console.log(`My name is ${name}`);
+
+    let cost = 5 + 2 * 3 + 9;
+
+    console.log(`Cost of food: $${cost}`);
+
+    const resTax = cost*0.1;
+
+    console.log("Tax (10%): $" + resTax);
+
+    let totalCost = cost + resTax;
+
+    console.log("Total: $" + totalCost);
+  </script>
+</body>
+</html>

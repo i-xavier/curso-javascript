@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p>
+    Cart Quantity
+  </p>
+  <button class="showQuantity_btn" onclick="showCart()">
+    Show Quantity
+  </button>
+  <button class="add2cart_btn" onclick="addToCart()">
+    Add to Cart
+  </button>
+  <button class="add2_btn" onclick="add2()">
+    +2
+  </button>
+  <button class="add3_btn" onclick="add3()">
+    +3
+  </button>
+  <button class="reset_btn" onclick="resetCart()">
+    Reset Cart
+  </button>
+  <script>
+    let cart = 0;
+
+    function addToCart (){
+      cart += 1;
+      showCart();
+    }
+
+    function add3 (){
+      cart += 3;
+      showCart();
+    }
+    
+    function add2 (){
+      cart += 2;
+      showCart();
+    }
+
+    function resetCart(){
+      cart = 0;
+      showCart();
+    }
+
+    function showCart(){
+      console.log(`Cart quantity: ${cart}`)
+    }
+
+  </script>
+</body>
+</html>

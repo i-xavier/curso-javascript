@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .pedra, .papel, .tesoura{
+      width: 50px;
+      height: 50px;
+      background-color: black;
+    }
+
+    #jogador, #computador{
+      width: 50px;
+      height: 50px;
+      
+    }
+
+    #resultado{
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    #vitorias, #derrotas, #empates{
+      margin-right: 15px;
+    }
+
+    p, a{
+      color: white;
+    }
+
+    body{
+      background-color: black;
+    }
+
+    .btn_pedra, .btn_papel, .btn_tesoura{
+      background-color: black;
+      border-radius: 100px;
+      border-width: 3px;
+      border-color: white;
+      padding: 30px;
+      cursor: pointer;
+      margin-bottom: 50px;
+    }
+
+    .resultados{
+      margin-top: 50px;
+    }
+
+    .reset{
+      display:block;
+    }
+  </style>
+</head>
+
+<body>
+  <p>
+    Pedra Papel Tesoura
+  </p>
+
+  <button class="btn_pedra" onclick="analisarJokenpo(0), tornarVisivel()">
+    <img class="pedra" src="imagens\desafio6\rock-emoji.png" >
+    
+  </button>
+
+  <button class="btn_papel"  onclick="analisarJokenpo(1), tornarVisivel()">
+    <img class="papel" src="imagens\desafio6\paper-emoji.png">
+
+  </button>
+
+  <button class="btn_tesoura" onclick="analisarJokenpo(2), tornarVisivel()">
+    <img class="tesoura" src="imagens\desafio6\scissors-emoji.png">
+  </button>
+
+  <div id="jogos" style="display:none">
+    <p id="resultado"></p>
+    
+    <a>Você</a>
+    
+    <img id="jogador" src="" alt="">
+    
+    <img id="computador" src="" alt="">
+    
+    <a>Computador</a>
+
+  </div>
+
+  <p class="resultados">Vitórias: <a id="vitorias">0</a>
+    Derrotas: <a id="derrotas">0</a>
+    Empates: <a id="empates">0</a></p>
+  
+
+  <button class="reset">Reset</button>
+  <script>
+    const max = 3;
+    let randomNum = '';
+
+    let movimentoComputador = new Image(), movimentoJogador = new Image();
+
+    let vitoria, empate, derrota;
+
+    vitoria = empate = derrota = 0;
+
+    const displayVitorias = document.getElementById("vitorias");
+    const displayDerrotas = document.getElementById("derrotas");
+    const displayEmpates  = document.getElementById("empates");
+    const displayResultado = document.getElementById("resultado");
+    
+
+
+    function jogarJokenpo(escolhaJogador) {
+      
+      randomNum = Math.floor(Math.random() * max);
+
+      if(randomNum === 0) {
+
+        movimentoComputador = "imagens/desafio6/rock-emoji.png";
+
+      } else if(randomNum === 1) {
+
+        movimentoComputador = "imagens/desafio6/paper-emoji.png";
+
+      } else if(randomNum === 2) {
+
+        movimentoComputador = "imagens/desafio6/scissors-emoji.png";
+
+      }
+
+      if(escolhaJogador === 0) {
+
+      movimentoJogador = "imagens/desafio6/rock-emoji.png";
+
+      } else if(escolhaJogador === 1) {
+
+       movimentoJogador = "imagens/desafio6/paper-emoji.png";
+
+      } else if(escolhaJogador === 2) {
+
+       movimentoJogador = "imagens/desafio6/scissors-emoji.png";
+
+      }
+
+      document.getElementById("jogador").src = movimentoJogador;
+      document.getElementById("computador").src = movimentoComputador;
+    }
+
+    function analisarJokenpo(escolha){
+
+      jogarJokenpo(escolha);
+
+      
+
+      if ((escolha === 0 && randomNum === 1) || (escolha === 1 && randomNum === 2) || (escolha === 2 && randomNum === 0)){
+
+        //alert("Você perdeu!\nMovimento do computador: " + movimentoComputador);
+        derrota++;
+        displayDerrotas.textContent = derrota;
+        displayResultado.textContent = "Você Perdeu";
+
+      } else if((escolha === 1 && randomNum === 0) || (escolha === 2 && randomNum === 1) || (escolha === 0 && randomNum === 2)) {
+
+        //alert("Você ganhou!\nMovimento do computador: " + movimentoComputador);
+        vitoria++;
+        displayVitorias.textContent = vitoria;
+        displayResultado.textContent = "Você ganhou";
+
+      } else if(escolha === randomNum) {
+
+        //alert("Empate!\nMovimento do computador: " + movimentoComputador);
+        empate++;
+        displayEmpates.textContent = empate;
+        displayResultado.textContent = "Você Empatou"
+
+      }
+
+    }
+
+    function tornarVisivel(){
+      let display = document.getElementById("jogos");
+      display.style.display = "block";
+    }
+
+  </script>
+</body>
+</html>

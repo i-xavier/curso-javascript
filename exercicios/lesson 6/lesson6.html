@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const hour = 12;
+    const name = "Igor";
+    const age = 66;
+    const isFeriado = true;
+    const randomNum = Math.random();
+    /*if (hour > 5 && hour <= 12){
+
+      alert("Bom dia, " + name + "!");
+
+    }
+    else if(hour > 12 && hour <= 17){
+
+      alert("Boa tarde, " + name+ "!");
+
+    }
+    else 
+      alert("Boa noite, " + name+ "!");*/
+
+    /*if((age <= 6 || age >= 65) && !isFeriado) {
+      alert("Tem desconto!");
+    }
+    else
+      alert("Sem desconto!");*/
+
+      let result;
+      let guess = 'Cara'
+
+      if(randomNum < 0.5){
+        result = "Cara";
+      }
+      else
+        result = "Coroa";
+
+      guess === result? alert("Você acertou") : alert("Você errou");
+
+  </script>
+</body>
+</html>

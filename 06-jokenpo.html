@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Jokenpô</title>
   <style>
     .pedra, .papel, .tesoura{
       width: 50px;
@@ -56,21 +56,20 @@
 
 <body>
   <p>
-    Pedra Papel Tesoura
+    Jokenpô
   </p>
 
   <button class="btn_pedra" onclick="analisarJokenpo(0), tornarVisivel()">
-    <img class="pedra" src="imagens\desafio6\rock-emoji.png" >
-    
+    <img class="pedra" src="imagens\07-jokenpo\rock-emoji.png" >
   </button>
 
   <button class="btn_papel"  onclick="analisarJokenpo(1), tornarVisivel()">
-    <img class="papel" src="imagens\desafio6\paper-emoji.png">
+    <img class="papel" src="imagens\07-jokenpo\paper-emoji.png">
 
   </button>
 
   <button class="btn_tesoura" onclick="analisarJokenpo(2), tornarVisivel()">
-    <img class="tesoura" src="imagens\desafio6\scissors-emoji.png">
+    <img class="tesoura" src="imagens\07-jokenpo\scissors-emoji.png">
   </button>
 
   <div id="jogos" style="display:none">
@@ -113,31 +112,33 @@
       
       randomNum = Math.floor(Math.random() * max);
 
+      console.log(randomNum);
+
       if(randomNum === 0) {
 
-        movimentoComputador = "imagens/desafio6/rock-emoji.png";
+        movimentoComputador = "imagens/07-jokenpo/rock-emoji.png";
 
       } else if(randomNum === 1) {
 
-        movimentoComputador = "imagens/desafio6/paper-emoji.png";
+        movimentoComputador = "imagens/07-jokenpo/paper-emoji.png";
 
       } else if(randomNum === 2) {
 
-        movimentoComputador = "imagens/desafio6/scissors-emoji.png";
+        movimentoComputador = "imagens/07-jokenpo/scissors-emoji.png";
 
       }
 
       if(escolhaJogador === 0) {
 
-      movimentoJogador = "imagens/desafio6/rock-emoji.png";
+      movimentoJogador = "imagens/07-jokenpo/rock-emoji.png";
 
       } else if(escolhaJogador === 1) {
 
-       movimentoJogador = "imagens/desafio6/paper-emoji.png";
+       movimentoJogador = "imagens/07-jokenpo/paper-emoji.png";
 
       } else if(escolhaJogador === 2) {
 
-       movimentoJogador = "imagens/desafio6/scissors-emoji.png";
+       movimentoJogador = "imagens/07-jokenpo/scissors-emoji.png";
 
       }
 

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+      Objects
+    </title>
+
+    <style>
+      
+    </style>
+
+  </head>
+
+  <body>
+    
+    <script>
+      const product1 = {
+        name: 'basketball', 
+        price: 2095
+      };
+
+      const product2 = {
+        name: 'football', 
+        price: 10750
+      };
+      
+      console.log(product1);
+
+      /*product.price = 'abacaxi';
+      console.log(product);
+      
+      product.notExist = true;
+      console.log(product);
+
+      delete product.notExist;
+      console.log(product);*/
+
+      //price = product.price;
+
+
+      console.log(product1)
+
+      product1['delivery-time'] = '3 days';
+
+      console.log(product1)
+
+      function comparePrice(product1, product2){
+
+        let result;
+
+        if(product1.price < product2.price) {
+          result = `the ${product1.name} is less expensive`;
+        }
+        else if(product2.price < product1.price) {
+          result = `the ${product2.name} is less expensive`;
+
+        }
+        else{
+          result = 'both have the same price';
+        }
+
+        console.log(result);
+      }
+
+      function isSameProduct(product1, product2){
+
+        let result = false;
+
+        if((product1.name === product2.name) && (product1.price === product2.price)){
+          result = true;
+        }
+
+        return result;
+      }
+
+      comparePrice(product1, product2);
+
+      const product3 = product1;
+
+      console.log(isSameProduct(product1,product2));
+      console.log(isSameProduct(product1,product3));
+
+      let greetings = 'Good Morning';
+
+      console.log(greetings.toLowerCase());
+      console.log(greetings.repeat(10));
+    </script>
+  </body>
+
+</html>
